@@ -1,0 +1,36 @@
+
+%ul#attributes
+    %form{:action => "/node", :method => "post"}
+        %input{:type => "hidden", :name => "_rev", :value => @rev}
+
+            %li
+                %label{:for => "hostname"}
+                    Hostname 
+                    %input{:name => "hostname", :value => @hostname}
+
+            - (@attributes).each do |attr|
+                %li
+                    %label{:for => "#{attr[0]}"}
+                        "#{attr[0]}"
+                        %input{:name => attr[0], :value => attr[1]}
+    
+    
+    
+            %input{:type => "submit", :value => "Save", :id => "save"}
+        
+    #add_link 
+        %a{:href => "#"} Add attribute
+    :javascript
+        $("#add_link").click( function() {
+            $("#attributes").append('
+                <li> 
+                  <label for="ip"> 
+                    "ip"
+                    <input name="ip" value=""> 
+                  </label> 
+                </li>
+            ');
+        });
+        
+  
+        

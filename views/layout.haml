@@ -1,0 +1,30 @@
+%html
+    %head
+        %title Puppeteer
+        %link{ :rel => "stylesheet", :href => "/stylesheet.css" }
+        %script{:Language => "JavaScript", :src => "/js/jquery-1.5.1.min.js"}
+        %script{:Language => "JavaScript", :src => "/js/puppet_web.js"}
+        
+    #header
+        %a{:href => '/'} Puppeteer
+
+    .left
+        #heading Navigation
+        #sidebar 
+            %ul
+                %li
+                    %a{:href => '/'} Home
+                %li
+                    %a{:href => '/nodes'} Nodes
+
+    .left
+        #heading= @page
+        #content
+            %message= @msg
+            =yield
+    
+    .clear
+        
+    #footer
+        #footer-content
+            

@@ -1,0 +1,126 @@
+$purple: #514A6B
+$lightpurple: #9C99B3
+$lightgray: #dedede
+$shadow: #bbb
+$padding: 8px
+$margin: 16px
+$listpadding: 8px
+$footerheight: 40px
+
+a
+    color: $purple
+
+body
+    background: $lightgray
+    color: black    
+    margin: 0
+    font-family: helvetica, arial
+
+#header
+    padding: $padding
+    background: $purple
+    font-size: 18
+    font-weight: bold
+    border-bottom: 2 $shadow solid
+    a
+        text-decoration: none
+        color: $lightpurple
+
+#footer
+    background: $lightpurple
+    position: fixed
+    bottom: 0
+    width: 100%
+    #footer-content
+        padding: $padding
+        height: $footerheight
+        font-size: 0.8em
+
+
+ul
+    list-style-type: none
+    padding: 0
+    margin: $padding
+    li
+        background: white
+        width: auto
+        padding: 4
+        margin: 2
+
+.left        
+    background: $lightpurple
+    color: $purple
+    margin: $margin
+    padding: 1
+    float: left
+    
+    border-bottom: 2 $shadow solid
+    border-right: 2 $shadow solid
+    -webkit-border-top-left-radius: 10px
+    -webkit-border-top-right-radius: 10px
+    -webkit-border-bottom-left-radius: 10px
+    -webkit-border-bottom-right-radius: 10px
+    -moz-border-radius-topleft: 10px
+    -moz-border-radius-topright: 10px
+    -moz-border-radius-bottomleft: 10px
+    -moz-border-radius-bottomright: 10px
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+ 
+    a
+        text-decoration: none
+    a:hover
+        text-decoration: underline
+    #heading
+        padding: $padding / 2
+        font-weight: bold
+        text-align: center
+   
+    #sidebar
+        background: white
+        margin: 0
+        width: 160
+        -webkit-border-bottom-left-radius: 10px
+        -webkit-border-bottom-right-radius: 10px
+        -moz-border-radius-bottomleft: 10px
+        -moz-border-radius-bottomright: 10px
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        ul
+            margin: 0
+            padding: $padding
+        li
+            margin: 0
+        .white
+            color: $purple
+
+    #content
+        background: white
+        width:  800
+        padding: $padding
+        -webkit-border-bottom-left-radius: 10px
+        -webkit-border-bottom-right-radius: 10px
+        -moz-border-radius-bottomleft: 10px
+        -moz-border-radius-bottomright: 10px
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        
+        li
+            background: $lightgray
+            margin: $margin/3
+            padding: $listpadding/2 $listpadding $listpadding
+
+        label
+            padding: $padding
+        input
+            width: 500
+            float: right
+        #save
+            width: 60
+
+.clear
+    clear: both   
+    height: $footerheight + $padding            
+    
