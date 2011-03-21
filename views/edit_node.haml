@@ -11,17 +11,38 @@
             - (@attributes).each do |attr|
                 %li
                     %label{:for => "#{attr[0]}"}
-                        "#{attr[0]}"
+                        
+                        "
+                        %span{:class => "editable"}= attr[0]
+                        "
+                        
                         %input{:name => attr[0], :value => attr[1]}
+
+
    
-%input{:type => "submit", :value => "Save", :id => "save"}
+    %input{:type => "submit", :value => "Save", :id => "save"}
         
 #add_link 
     %a{:href => "#"} Add attribute
+
+
 :javascript
-    $("#add_link").click( function() {
-        $("#attributes").append("<li><label for=''>\"\"<input name='ip'></label></li>");
+    $("#add_link").click( function() {   
+        var span = "<span class='editable'>NEW</span>"
+        var input = "<input name='new'>"
+        var label = "<label for='new'>\" " + span + " \" " + input + "  </label>";
+     
+        $("#attributes").append("<li> " + label + " </li>")
     });
     
-  
-        
+:javascript
+    $(function() {
+        $('.editable').inlineEdit({
+            save: function(e, data) {
+                $(this).parent().children('input').attr("name", data.value)
+            }
+        });
+    });
+
+
+
