@@ -1,5 +1,6 @@
 #!/usr/bin/ruby -rubygems
 
+require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'json'
