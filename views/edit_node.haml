@@ -16,7 +16,9 @@
                             X
                             :javascript
                                 $("#del_#{attr[0]}").click( function() {   
-                                    $(this).parents('li').remove()
+                                    if ( confirm("Are you sure you want attribute '#{attr[0]}' removed?")) {
+                                        $(this).parents('li').remove();
+                                    }
                                 });
                         "
                         %span{:class => "editable"}= attr[0]
