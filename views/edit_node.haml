@@ -24,7 +24,7 @@
 
     %h3 Classes
     .selects
-        %select{:class => "listselect", :name => "classes", :selected => "#{@my_classes}"}
+        %select{:class => "listselect", :name => "classes[]", :selected => "#{@my_classes}"}(multiple=true)
             - (@classes).each do |class_obj|
                 %option{:value => "#{class_obj}"}= class_obj
     

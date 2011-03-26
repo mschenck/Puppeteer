@@ -31,7 +31,7 @@ get '/node' do
     @rev = @attributes["_rev"]
     @attributes.delete("_rev")
     
-    @my_classes = @attributes["classes"]
+    @my_classes = @attributes["classes"].join(",")
     
     if not @my_classes
       @my_classes = []
