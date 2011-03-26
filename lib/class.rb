@@ -22,6 +22,7 @@ get '/class' do
     @classname = params["id"]
     json = server.get("/classes/#{ @classname }").body
     @attributes = JSON.parse(json)
+    
     @rev = @attributes["_rev"]
     @attributes.delete("_rev")
     @attributes.delete("_id")
@@ -29,6 +30,11 @@ get '/class' do
   else
     @attributes = []
   end  
+
+  if not params["msg"].nil?
+    @msg = params["msg"]
+  end
+
 
   @page = "Manage class"
   haml :edit_class
@@ -51,7 +57,6 @@ post '/class' do
   # Store passed class data
   doc = JSON params
   server.put "/classes/#{ @classname }", doc
-
-  @page = "Class changed"
-  haml :class_changed
+  
+  redirect to "/class?id=#{@classname}&msg=#{@msg}"
 end
