@@ -27,14 +27,17 @@
                         
                         %input{:name => attr[0], :value => attr[1]}
 
-    #add_link 
-        %a{:href => "#"} Add attribute
+    %a{:href => "#", :id => "add_link"} Add attribute
+
+    %hr
 
     %h3 Classes
     .selects
         %select{:class => "listselect", :name => "classes[]", :selected => "#{@my_classes}"}(multiple=true)
             - (@classes).each do |class_obj|
                 %option{:value => "#{class_obj}"}= class_obj
+    
+    %hr
     
     %h3 Terminus Output
     #terminus

@@ -5,7 +5,8 @@ $darkgray: #333333
 $shadow: #bbb
 $padding: 8px
 $margin: 16px
-$listpadding: 8px
+$listpadding: 9px
+$terminusborder: 2px
 
 a
     color: $purple
@@ -97,19 +98,55 @@ ul
         border-bottom-left-radius: 10px
         border-bottom-right-radius: 10px
         
+        h3
+            margin: 0
+        
         form
             margin: 0
         
+        ul
+            background: white
+            margin: $margin
+            padding: 0
+            border: 1px solid $lightgray
+            
         li
-            background: $lightgray
-            margin: $margin/3
-            padding: $listpadding/2 $listpadding $listpadding
+            padding: $listpadding / 3 $listpadding $listpadding 
+            background: white   
+            color: $purple
 
         label
             padding: $padding
+            
         input
             width: 480
             float: right
+            padding: $padding / 2
+            margin: 0
+            color: black
+            background: $lightgray
+            border-top: $terminusborder / 2 $purple solid
+            border-left: $terminusborder / 2 $purple solid
+            border-bottom: $terminusborder / 2 $darkgray solid
+            border-right: $terminusborder / 2 $darkgray solid
+            -webkit-border-top-left-radius: 10px
+            -webkit-border-top-right-radius: 10px
+            -webkit-border-bottom-left-radius: 10px
+            -webkit-border-bottom-right-radius: 10px
+            -moz-border-radius-topleft: 10px
+            -moz-border-radius-topright: 10px
+            -moz-border-radius-bottomleft: 10px
+            -moz-border-radius-bottomright: 10px
+            border-top-left-radius: 10px
+            border-top-right-radius: 10px
+            border-bottom-left-radius: 10px
+            border-bottom-right-radius: 10px
+            
+        #add_link
+            margin: 0
+            padding: $padding / 2 0
+            width: 100
+            
         .selects
             margin: $margin
                         
@@ -126,10 +163,22 @@ ul
             margin: $margin
             background: $darkgray
             color: $lightpurple
-            border-top: 2 $shadow solid
-            border-left: 2 $shadow solid
-            border-bottom: 2 $lightgray solid
-            border-right: 2 $lightgray solid
+            border-top: $terminusborder $lightpurple solid
+            border-left: $terminusborder $lightpurple solid
+            border-bottom: $terminusborder $lightgray solid
+            border-right: $terminusborder $lightgray solid
+            -webkit-border-top-left-radius: 10px
+            -webkit-border-top-right-radius: 10px
+            -webkit-border-bottom-left-radius: 10px
+            -webkit-border-bottom-right-radius: 10px
+            -moz-border-radius-topleft: 10px
+            -moz-border-radius-topright: 10px
+            -moz-border-radius-bottomleft: 10px
+            -moz-border-radius-bottomright: 10px
+            border-top-left-radius: 10px
+            border-top-right-radius: 10px
+            border-bottom-left-radius: 10px
+            border-bottom-right-radius: 10px
         
         a.del_link    
             padding: 0
@@ -137,6 +186,13 @@ ul
             text-decoration: none
             img
                 vertical-align: bottom
+                border: 0
+
+hr
+    color: $purple
+    border: 0px 
+    border-bottom: 1px  
+    border-style: dashed
 
 #message
     padding: $padding / 2
