@@ -31,14 +31,15 @@
     %h3 Terminus
     #terminus
         %pre{:id => "terminus_preview"}
-    :javascript
-        $.ajax({
-            url: "/terminus/?id=#{@hostname}",
-            success: function(data){
-                $("#terminus_preview").html(data);
-            }        
-        });
-    
+            [New node: NO TERMINUS DATA]
+    - if(@hostname)
+        :javascript
+            $.ajax({
+                url: "/terminus/?id=#{@hostname}",
+                success: function(data){
+                    $("#terminus_preview").html(data);
+                }        
+            });    
     
     %input{:type => "submit", :value => "Save", :id => "save"}
     
