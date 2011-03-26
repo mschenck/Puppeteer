@@ -30,9 +30,7 @@ get '/node' do
     
     @rev = @attributes["_rev"]
     @attributes.delete("_rev")
-    
-    
-    
+      
     if not @attributes["classes"]
       @my_classes = []
     else
@@ -47,6 +45,11 @@ get '/node' do
     @attributes = []
     @my_classes = []
   end  
+  
+  if not params["msg"].nil?
+    @msg = params["msg"]
+  end
+  
 
   @page = "Manage node"
   haml :edit_node
@@ -60,6 +63,7 @@ post '/node' do
   if params["_rev"] != ""
     @msg = "Updated"
   else
+    params.delete("_rev")
     @msg = "Added"
   end
 
@@ -69,6 +73,5 @@ post '/node' do
   doc = JSON params
   server.put "/nodes/#{ @hostname }", doc
 
-  @page = "Node changed"
-  haml :node_changed
+  redirect to "/node?id=#{@hostname}&msg=#{@msg}"
 end
