@@ -18,14 +18,15 @@
                         "
                         
                         %input{:name => attr[0], :value => attr[1]}
-
-
-   
-    %input{:type => "submit", :value => "Save", :id => "save"}
         
-#add_link 
-    %a{:href => "#"} Add attribute
+    #add_link 
+        %a{:href => "#"} Add attribute
 
+    %h3 Classes
+    
+    
+    %input{:type => "submit", :value => "Save", :id => "save"}
+    .clear
 
 :javascript
     $("#add_link").click( function() {   

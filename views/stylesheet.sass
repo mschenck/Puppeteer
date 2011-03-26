@@ -31,6 +31,8 @@ body
     position: fixed
     bottom: 0
     width: 100%
+    z-index: -1
+    
     #footer-content
         padding: $padding
         height: $footerheight
@@ -53,6 +55,7 @@ ul
     margin: $margin
     padding: 1
     float: left
+    z-index: 1
     
     border-bottom: 2 $shadow solid
     border-right: 2 $shadow solid
@@ -107,6 +110,9 @@ ul
         border-bottom-left-radius: 10px
         border-bottom-right-radius: 10px
         
+        form
+            margin: 0
+        
         li
             background: $lightgray
             margin: $margin/3
@@ -128,6 +134,5 @@ ul
 
 
 .clear
-    clear: both   
-    height: $footerheight + $padding            
+    clear: both              
     
