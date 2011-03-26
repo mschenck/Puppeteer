@@ -1,14 +1,15 @@
 %ul    
     - (@classes).each do |class_obj|
         %li 
-            %span{:class => "del_link", :id => "del_#{class_obj}"}
-                %a{:href => "#" } X
-                :javascript
-                    $("#del_#{class_obj}").click( function() {   
-                        if ( confirm("Are you sure you want class '#{class_obj}' removed?")) {
-                            document.location.href='/delete_class?id=#{class_obj}';
-                        }
-                    });
+            %a{:href => "#", :class => "del_link", :id => "del_#{class_obj}"}
+                %img{:src => "/images/delete.gif"}
+            :javascript
+                $("#del_#{class_obj}").click( function() {   
+                    if ( confirm("Are you sure you want class '#{class_obj}' removed?")) {
+                        document.location.href='/delete_class?id=#{class_obj}';
+                    }
+                });
+                
             %strong
                 %a{:href => "/class?id=#{class_obj}"}= class_obj
 

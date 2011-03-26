@@ -12,14 +12,14 @@
             - (@attributes).each do |attr|
                 %li
                     %label{:for => "#{attr[0]}"}
-                        %span{:class => "del_link", :id => "del_#{attr[0]}"}
-                            %a{:href => "#"}X
-                            :javascript
-                                $("#del_#{attr[0]}").click( function() {   
-                                    if ( confirm("Are you sure you want attribute '#{attr[0]}' removed?")) {
-                                        $(this).parents('li').remove();
-                                    }
-                                });
+                        %a{:href => "#", :id => "del_#{attr[0]}"}
+                            %img{:src => "/images/delete.gif"}
+                        :javascript
+                            $("#del_#{attr[0]}").click( function() {   
+                                if ( confirm("Are you sure you want attribute '#{attr[0]}' removed?")) {
+                                    $(this).parents('li').remove();
+                                }
+                            });
                         
                         "
                         %span{:class => "editable"}= attr[0]
