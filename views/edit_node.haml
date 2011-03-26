@@ -12,13 +12,18 @@
             - (@attributes).each do |attr|
                 %li
                     %label{:for => "#{attr[0]}"}
-                        
+                        %span{:class => "del_link", :id => "del_#{attr[0]}"}
+                            X
+                            :javascript
+                                $("#del_#{attr[0]}").click( function() {   
+                                    $(this).parents('li').remove()
+                                });
                         "
                         %span{:class => "editable"}= attr[0]
                         "
                         
                         %input{:name => attr[0], :value => attr[1]}
-        
+
     #add_link 
         %a{:href => "#"} Add attribute
 
