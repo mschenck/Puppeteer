@@ -31,10 +31,12 @@ get '/node' do
     @rev = @attributes["_rev"]
     @attributes.delete("_rev")
     
-    @my_classes = @attributes["classes"].join(",")
     
-    if not @my_classes
+    
+    if not @attributes["classes"]
       @my_classes = []
+    else
+      @my_classes = @attributes["classes"].join(",")
     end
     @attributes.delete("classes")
     
