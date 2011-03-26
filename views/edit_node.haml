@@ -31,6 +31,18 @@
     
     %input{:type => "submit", :value => "Save", :id => "save"}
     
+    
+    %h3 Terminus
+    #terminus
+        %pre{:id => "terminus_preview"}
+    :javascript
+        $.ajax({
+            url: "/terminus/?id=#{@hostname}",
+            success: function(data){
+                $("#terminus_preview").html(data);
+            }        
+        });
+    
     .clear
 
 :javascript
