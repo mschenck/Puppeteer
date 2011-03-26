@@ -24,12 +24,13 @@
 
     %h3 Classes
     .selects
-        %select{:class => "listselect", :name => "classes"}
-            %option{:value => "1"}
-                Design
-		
+        %select{:class => "listselect", :name => "classes", :selected => "#{@my_classes}"}
+            - (@classes).each do |class_obj|
+                %option{:value => "#{class_obj}"}= class_obj
+    
     
     %input{:type => "submit", :value => "Save", :id => "save"}
+    
     .clear
 
 :javascript

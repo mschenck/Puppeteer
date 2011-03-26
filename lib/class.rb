@@ -40,7 +40,6 @@ post '/class' do
 
   # Class add or update?
   if params["_rev"] != ""
-    json = server.get("/classes/#{ @classname }").body
     @msg = "Updated"
   else
     params.delete("_rev")
