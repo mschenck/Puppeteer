@@ -26,18 +26,9 @@ get '/terminus/' do
       key = attr[0]
       value = attr[1]
       
-      # Convert arrays
-      if value.match('^\[')
-        val_array = value.gsub(/[\[\]]/,'').gsub(/, +/,',').split(',')
-        value = val_array
-      else
-        # convert hashes
-        if value.match('^\{')
-          #val_hash = value.gsub(/[\{\}]/,'').gsub(/ +\=> +/,':').gsub(/, +/,',').split(',')
-          #val_hash[0] = ":#{val_hash[0]}"
-          #value = val_hash
-          value = eval(value)
-        end
+      # If Array or Hash, convert
+      if value.match('^\[') or value.match('^\{')
+        value = eval(value)
       end
       
       node["parameters"].push( {key => value} )
