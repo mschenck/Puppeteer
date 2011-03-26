@@ -1,6 +1,14 @@
 %ul    
     - (@nodes).each do |node|
         %li 
+            %span{:class => "del_link", :id => "del_#{node}"}
+                %a{:href => "#" } X
+                :javascript
+                    $("#del_#{node}").click( function() {   
+                        if ( confirm("Are you sure you want node '#{node}' removed?")) {
+                            document.location.href='/delete_node?id=#{node}';
+                        }
+                    });
             %strong
                 %a{:href => "/node?id=#{node}"}= node
 

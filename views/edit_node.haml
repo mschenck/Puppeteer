@@ -13,7 +13,7 @@
                 %li
                     %label{:for => "#{attr[0]}"}
                         %span{:class => "del_link", :id => "del_#{attr[0]}"}
-                            X
+                            %a{:href => "#"}X
                             :javascript
                                 $("#del_#{attr[0]}").click( function() {   
                                     if ( confirm("Are you sure you want attribute '#{attr[0]}' removed?")) {

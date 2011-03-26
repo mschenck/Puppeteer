@@ -8,9 +8,30 @@ get '/classes' do
   JSON.parse(json)["rows"].each do |class_obj|
     @classes.push(class_obj["id"])
   end
+  
+  if not params["msg"].nil?
+    @msg = params["msg"]
+  end
 
   @page = "Classes"
   haml :classes
+end
+
+get '/delete_class' do
+  server = Couch::Server.new("localhost", "5984")
+
+  # existing Class
+  if not params["id"].nil?
+    @classname = params["id"]
+    json = server.get("/classes/#{ @classname }").body
+    @attributes = JSON.parse(json)
+    
+    @rev = @attributes["_rev"]
+    server.delete("/classes/#{ @classname }?rev=#{@rev}")
+    @msg = "class '#{@classname}' has been removed"
+  end
+  
+  redirect to "/classes?msg=#{@msg}"
 end
 
 get '/class' do

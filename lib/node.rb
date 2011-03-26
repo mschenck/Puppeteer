@@ -9,8 +9,29 @@ get '/nodes' do
     @nodes.push(node["id"])
   end
 
+  if not params["msg"].nil?
+    @msg = params["msg"]
+  end
+
   @page = "Nodes"
   haml :nodes
+end
+
+get '/delete_node' do
+  server = Couch::Server.new("localhost", "5984")
+
+  # existing Node
+  if not params["id"].nil?
+    @hostname = params["id"]
+    json = server.get("/nodes/#{ @hostname }").body
+    @attributes = JSON.parse(json)
+    
+    @rev = @attributes["_rev"]
+    server.delete("/nodes/#{ @hostname }?rev=#{@rev}")
+    @msg = "class '#{@hostname}' has been removed"
+  end
+  
+  redirect to "/nodes?msg=#{@msg}"
 end
 
 get '/node' do
