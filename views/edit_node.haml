@@ -23,7 +23,11 @@
         %a{:href => "#"} Add attribute
 
     %h3 Classes
-    
+    .selects
+        %select{:class => "listselect", :name => "classes"}
+            %option{:value => "1"}
+                Design
+		
     
     %input{:type => "submit", :value => "Save", :id => "save"}
     .clear
@@ -46,5 +50,8 @@
         });
     });
 
-
+:javascript
+    $(document).ready(function(){
+        $(".listselect").listselect();
+    });
 

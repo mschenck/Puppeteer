@@ -5,7 +5,6 @@ $shadow: #bbb
 $padding: 8px
 $margin: 16px
 $listpadding: 8px
-$footerheight: 40px
 
 a
     color: $purple
@@ -25,19 +24,6 @@ body
     a
         text-decoration: none
         color: $lightpurple
-
-#footer
-    background: $lightpurple
-    position: fixed
-    bottom: 0
-    width: 100%
-    z-index: -1
-    
-    #footer-content
-        padding: $padding
-        height: $footerheight
-        font-size: 0.8em
-
 
 ul
     list-style-type: none
@@ -123,6 +109,8 @@ ul
         input
             width: 480
             float: right
+        .selects
+            margin: $margin
                         
         .editable
             input
