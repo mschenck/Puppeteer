@@ -10,6 +10,10 @@
     #header
         %a{:href => '/'} Puppeteer
 
+    - if @msg
+        #message= @msg
+    .clear
+
     .left
         #heading Navigation
         #sidebar 
@@ -24,7 +28,6 @@
     .left
         #heading= @page
         #content
-            %message= @msg
             =yield
     
     .clear
