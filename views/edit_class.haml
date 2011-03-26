@@ -1,13 +1,13 @@
 
-%form{:action => "/node", :method => "post"}
+%form{:action => "/class", :method => "post"}
     %h3 Attributes
     %ul#attributes
         %input{:type => "hidden", :name => "_rev", :value => @rev}
 
             %li
-                %label{:for => "hostname"}
-                    Hostname 
-                    %input{:name => "hostname", :value => @hostname}
+                %label{:for => "classname"}
+                    Class name 
+                    %input{:name => "classname", :value => @classname}
 
             - (@attributes).each do |attr|
                 %li

@@ -1,0 +1,7 @@
+%ul    
+    - (@classes).each do |class_obj|
+        %li 
+            %strong
+                %a{:href => "/class?id=#{class_obj}"}= class_obj
+
+%a{:href => '/class'} add a class
