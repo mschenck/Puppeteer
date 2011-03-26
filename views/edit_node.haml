@@ -28,10 +28,6 @@
             - (@classes).each do |class_obj|
                 %option{:value => "#{class_obj}"}= class_obj
     
-    
-    %input{:type => "submit", :value => "Save", :id => "save"}
-    
-    
     %h3 Terminus
     #terminus
         %pre{:id => "terminus_preview"}
@@ -42,6 +38,9 @@
                 $("#terminus_preview").html(data);
             }        
         });
+    
+    
+    %input{:type => "submit", :value => "Save", :id => "save"}
     
     .clear
 
