@@ -6,13 +6,14 @@
         %script{:Language => "JavaScript", :src => "/js/puppet_web.js"}
         %script{:Language => "JavaScript", :src => "/js/jquery.inlineedit.js"}
         %script{:Language => "JavaScript", :src => "/js/jquery.listselect.min.js"}
+        :javascript
+            window.onload = function() {
+                $("#message").fadeOut(2000);
+            };
+            
         
     #header
         %a{:href => '/'} Puppeteer
-
-    - if @msg
-        #message= @msg
-    .clear
 
     .left
         #heading Navigation
@@ -30,6 +31,8 @@
     .left
         #heading= @page
         #content
+            - if @msg
+                #message= @msg
             =yield
     
     .clear
