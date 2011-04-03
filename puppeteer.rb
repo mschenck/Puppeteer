@@ -20,6 +20,12 @@ get '/' do
   haml :index
 end
 
+# Help
+get '/help' do
+  @page = "Help"
+  haml :help
+end
+
 get '/stylesheet.css' do
   sass :stylesheet
 end

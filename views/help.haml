@@ -1,0 +1,35 @@
+
+%h3 Attributes
+%ul
+
+    %li 
+        %strong "Key"
+        (The left field of each attribute) is used to define the attribute name given and used by puppet.  To set this value, click between the quotes
+    
+    %li
+        %strong Simple values
+        Simple enter the value (int,float, string) without quotes
+    
+    %li
+        %strong Arrays
+        Arrays can be entered in a comma-separated format, however each element must exist in quotes, example:
+        %input{:value => '"value 1", "value 2", "value 3"'}
+        .clear
+    
+        %pre
+            Result:
+            \- value 1
+            \- value 2
+            \- value 3
+    
+    %li
+        %strong Hashes
+        Much like Arrays, Hashes are quoted/comma-separated values.  That being said, probably not how you think.  You place quotes around each "key => value" pair, example:
+        %input{:value => '"key1 => value 1", "key2 => value 2", "key3 => value 3"'}
+        .clear
+        %pre
+            Result:
+            key1: value 1
+            key2: value 2
+            key3: value 3
+    
